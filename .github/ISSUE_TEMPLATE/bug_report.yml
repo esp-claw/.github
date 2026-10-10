@@ -1,0 +1,50 @@
+name: Bug report
+description: Something does not work as described.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Security vulnerabilities: do not report them here. See SECURITY.md (Security > Advisories > Report a vulnerability).
+
+        **Remove secrets** from everything you paste: API keys, Telegram bot tokens, Wi-Fi passwords, `api_profiles` contents, signing keys and private host names you do not want public.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Send "..." in Telegram
+        2. ...
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware version
+      description: Commit or version of esp-claw (boot log line "App version", or `git describe` of your build).
+      placeholder: e.g. 353401bc
+    validations:
+      required: true
+  - type: input
+    id: board
+    attributes:
+      label: Board
+      placeholder: e.g. ESP32-S3, 8 MB flash, 8 MB PSRAM
+  - type: textarea
+    id: apps
+    attributes:
+      label: Installed apps and versions
+      description: Output of `/apps`, or the app names and versions involved. Leave empty if no app is involved.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Serial log or Telegram output around the problem, with secrets removed.
+      render: text
