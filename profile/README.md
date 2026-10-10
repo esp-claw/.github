@@ -29,12 +29,15 @@ The firmware runs on an ESP32-S3 (8 MB flash, 8 MB PSRAM) and is used through Te
 | Repository | Contents |
 |---|---|
 | [esp-claw](https://github.com/esp-claw/esp-claw) | The firmware, forked from espressif/esp-claw |
-| [app-sdk](https://github.com/esp-claw/app-sdk) | SDK for WASM apps: host API header, manifest schema, build, sign and package tools |
+| [app-sdk](https://github.com/esp-claw/app-sdk) | SDK for WASM apps: host API headers, build script, package/sign tool, manifest and module checks, reusable CI workflow |
+| [app-template](https://github.com/esp-claw/app-template) | Template repository for new apps ("Use this template") |
 | [app-hello](https://github.com/esp-claw/app-hello) | Example app: echo, benchmark, key-value demo, runaway-protection test |
-| [app-cf-dns](https://github.com/esp-claw/app-cf-dns) | Reads Cloudflare zones and DNS records through the device's credential profile |
 | [app-ping](https://github.com/esp-claw/app-ping) | Pings a host from the device (ICMP) |
+| [app-cloudflare](https://github.com/esp-claw/app-cloudflare) | Cloudflare zones, DNS (read/write), cache purge, tunnels, workers, analytics |
+| [app-github](https://github.com/esp-claw/app-github) | GitHub notifications, PRs, issues, CI runs, failed-job logs, releases (read-only) |
+| [app-supabase](https://github.com/esp-claw/app-supabase) | Supabase projects, service health, usage, branches, logs (read-only) |
 
-The apps work with runtime v1 and are built by CI. Packages are not signed yet; signing comes with the installer.
+Apps are signed `.ecapp` packages (Ed25519). The device installs them from a release URL with `/app install <url>` after a confirmation in Telegram, and only loads apps signed by a trusted key.
 
 ## License
 
