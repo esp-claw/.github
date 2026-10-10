@@ -26,4 +26,5 @@ Thanks for helping. This applies to all repositories of [esp-claw (community)](h
 
 1. Create your app from [app-template](https://github.com/esp-claw/app-template) ("Use this template") and follow its README. Its CI uses the reusable app-sdk workflow.
 2. Grant only the permissions the app uses in `manifest.json`. Apps that change things through an API should ask with `claw_confirm()` or rely on the device's confirmation for mutating requests.
-3. Make sure CI is green, then open an issue in [app-sdk](https://github.com/esp-claw/app-sdk/issues) with a link to your repository if you would like it listed or moved into the esp-claw organisation. Apps published here are reviewed and signed with the esp-claw community key by a maintainer; CI never signs.
+3. Sign your releases with your own Ed25519 key (`sdk/tools/ecapp.py pack build --key <your.pem>`) and publish your public key in your README. Users install third-party apps by adding that public key to `app_trusted_keys` on their device; they should only do so for publishers they trust. CI never signs, and no one else's key is used for your app.
+4. If you would like your app listed, open an issue in [app-sdk](https://github.com/esp-claw/app-sdk/issues) with a link to your repository. Listing is not an endorsement and does not change who signs the app.
