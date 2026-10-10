@@ -36,6 +36,7 @@ The firmware runs on an ESP32-S3 (8 MB flash, 8 MB PSRAM) and is used through Te
 | [app-cloudflare](https://github.com/esp-claw/app-cloudflare) | Cloudflare zones, DNS (read/write), cache purge, tunnels, workers, analytics |
 | [app-github](https://github.com/esp-claw/app-github) | GitHub notifications, PRs, issues, CI runs, failed-job logs, releases (read-only) |
 | [app-supabase](https://github.com/esp-claw/app-supabase) | Supabase projects, service health, usage, branches, logs (read-only) |
+| [app-search](https://github.com/esp-claw/app-search) | Web and news search via Tavily or Brave |
 
 Apps are signed `.ecapp` packages (Ed25519). The device installs them from a release URL with `/app install <url>` after a confirmation in Telegram, and only loads apps signed by a trusted key.
 
