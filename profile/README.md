@@ -29,8 +29,11 @@ The firmware runs on an ESP32-S3 (8 MB flash, 8 MB PSRAM) and is used through Te
 | Repository | Contents |
 |---|---|
 | [esp-claw](https://github.com/esp-claw/esp-claw) | The firmware, forked from espressif/esp-claw |
+| [app-sdk](https://github.com/esp-claw/app-sdk) | SDK for WASM apps: host API header, manifest schema, build, sign and package tools |
+| [app-hello](https://github.com/esp-claw/app-hello) | Example app: echo, benchmark, key-value demo, runaway-protection test |
+| [app-cf-dns](https://github.com/esp-claw/app-cf-dns) | Reads Cloudflare zones and DNS records through the device's credential profile |
 
-App SDK and app repositories will be added once the app runtime has been tested on hardware.
+The app repositories are placeholders for now. Their code will be published once the app runtime has been tested on hardware.
 
 ## License
 
